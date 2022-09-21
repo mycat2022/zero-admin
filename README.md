@@ -43,3 +43,15 @@
 ## 1.7职位列表
 
 ![image-20210427204732978](https://gitee.com/liufeihua/images/raw/master/images/image-20210427204732978.png)
+
+# 2.启动
+ 启动 etcd
+## 2.1 API
+go run sys.go -f etc/sys.yaml
+go run ums.go -f etc/ums.yaml
+go run pms.go -f etc/pms.yaml
+go run oms.go -f etc/oms.yaml
+go run sms.go -f etc/sms.yaml
+
+
+go run admin.go -f etc/admin-api.yaml
