@@ -27,7 +27,7 @@ func NewOrderDeleteLogic(ctx context.Context, svcCtx *svc.ServiceContext) OrderD
 
 func (l *OrderDeleteLogic) OrderDelete(req types.DeleteOrderReq) (*types.DeleteOrderResp, error) {
 	_, err := l.svcCtx.Oms.OrderDelete(l.ctx, &omsclient.OrderDeleteReq{
-		Id: req.Id,
+		OrderId: req.Id,
 	})
 
 	if err != nil {

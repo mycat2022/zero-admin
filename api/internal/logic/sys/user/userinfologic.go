@@ -45,6 +45,7 @@ func (l *UserInfoLogic) UserInfo() (*types.UserInfoResp, error) {
 
 	//组装ant ui中的菜单
 	for _, item := range resp.MenuListTree {
+		if len(strings.TrimSpace(item.VuePath)) != 0 {
 		MenuTree = append(MenuTree, &types.ListMenuTree{
 			Id:       item.Id,
 			Path:     item.Path,
@@ -52,6 +53,7 @@ func (l *UserInfoLogic) UserInfo() (*types.UserInfoResp, error) {
 			ParentId: item.ParentId,
 			Icon:     item.Icon,
 		})
+	  }
 	}
 
 	//组装element ui中的菜单
